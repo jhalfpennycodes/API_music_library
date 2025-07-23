@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+ {% block content %}
+
+<h1>Song list: </h1>
+    <style>table, th, td { border: 1px solid black;}</style>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Search for Video</th>
+          </tr>
+        </thead>
+            {% for i in range(song_list|length) : %}
+                <tr>
+                    <td>{{song_list[i]['title']}}</td>
+                    <td>{{song_list[i]['artist']}}</td>
+                    <td><a href="{{ url_for('youtube_search', song=song_list[i]['title']) }}"><input type="submit" value="Search" class="btn btn-primary"></a></td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

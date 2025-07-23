@@ -1,0 +1,16 @@
+ {% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" name="genre">
+        {{ form.hidden_tag() }}
+        <div>
+            <h2>Pick an Era of music:</h2>
+        </div>
+        <div>
+            <h6>Era:</h6>
+            <p>{{ form.era }}</p>
+            <br>
+            <p><input type="submit" value="Select era"></p>
+        </div>
+    </form>
+{% endblock %}
